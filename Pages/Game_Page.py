@@ -9,4 +9,4 @@ from Class.Pieces.King import *
 
 def Game_Page(game : Game()):
 
-    pass #affichage de la page Game_Page et calcul de jeu
+    pass
