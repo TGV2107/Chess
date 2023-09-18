@@ -10,3 +10,4 @@ from Class.Pieces.King import *
 def Game_Page(game : Game()):
 
     pass
+#test de github
