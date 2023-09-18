@@ -2,7 +2,6 @@
 
 import pygame
 import time
-import pandas
 
 #importation des classes
 
