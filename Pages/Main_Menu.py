@@ -1,4 +1,5 @@
 from Class.Button import *
+import random
 
 def Main_Menu(screen):
 
