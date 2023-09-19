@@ -1,6 +1,6 @@
 #importation des utilitaires
+#Pepito
 
-import random
 import pygame
 import time
 
