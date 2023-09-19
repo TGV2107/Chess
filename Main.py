@@ -1,5 +1,4 @@
 #importation des utilitaires
-#Pepito
 
 import pygame
 import time
