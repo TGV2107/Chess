@@ -1,5 +1,6 @@
 #importation des utilitaires
 
+import random
 import pygame
 import time
 
