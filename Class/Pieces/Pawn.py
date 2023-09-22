@@ -8,12 +8,18 @@ class Pawn(Piece):
 
         super().__init__("P", color) #Attention les notations ne contiennent pas le "P" !
 
-    def LegalMoves(self, Board, x, y):
-
+    def LegalMoves(self, Board):
+        y,x = self.posy,self.posx
+        if Piece.Color == "Black":
+            moveDirection = -1
+        elif Piece.Color == "White":
+            moveDirection = 1
+        
+        legalmoves = []
         #Ecrire la fonction de calcule des coups légaux grâce au plateau (Board)
         if Board[y + moveDirection][x] == None: #verifier si le roi n'est pas découvert
             legalmoves.append([y + moveDirection][x])
-            
+
         if Board[y + moveDirection][x + moveDirection] == Piece.Color != self.Color: #verifier si le roi n'est pas découvert
             legalmoves[y + moveDirection][x + moveDirection]
         return legalmoves
