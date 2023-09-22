@@ -1,24 +1,26 @@
 #importation des utilitaires
 
-import pygame
 import time
+
+import pygame
+
+from Class.Game import *
+from Class.Pieces.Bishop import *
+from Class.Pieces.King import *
+from Class.Pieces.Knight import *
+from Class.Pieces.Pawn import *
+from Class.Pieces.Piece import *
+from Class.Pieces.Queen import *
+from Class.Pieces.Rook import *
+from Class.Window import *
+from Pages.Game_Page import *
+from Pages.Main_Menu import *
 
 #importation des classes
 
-from Class.Window import *
-from Class.Game import *
-from Class.Pieces.Piece import *
-from Class.Pieces.Pawn import *
-from Class.Pieces.Rook import *
-from Class.Pieces.Knight import *
-from Class.Pieces.Bishop import *
-from Class.Pieces.Queen import *
-from Class.Pieces.King import *
 
 #importation des pages
 
-from Pages.Main_Menu import *
-from Pages.Game_Page import *
 
 #page pygame
 pygame.init()
@@ -46,7 +48,7 @@ while running:
 
         Game_Page(game)
     
-    #détection des événements                          
+    #détection des événements
     for event in pygame.event.get():
         
         #événement de fermeture de la page pygame
