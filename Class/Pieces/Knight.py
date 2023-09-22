@@ -10,8 +10,4 @@ class Knight(Piece):
 
     def LegalMoves(self, Board):
         #Ecrire la fonction de calcule des coups légaux grâce au plateau (Board)
-        move = [(2,1),(2,-1),(1,2),(1,-2),(-2,1),(-2,-1)]
-        y,x = self.posy
-        legalmoves = []
-
-    
+        pass
