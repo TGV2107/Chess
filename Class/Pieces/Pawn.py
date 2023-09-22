@@ -8,7 +8,7 @@ class Pawn(Piece):
 
         super().__init__("P", color) #Attention les notations ne contiennent pas le "P" !
 
-    def LegalMoves(self, Board, x, y):
+    def LegalMoves(self, Board):
 
         #Ecrire la fonction de calcule des coups légaux grâce au plateau (Board)
         pass
