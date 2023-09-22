@@ -9,6 +9,9 @@ class Knight(Piece):
         super().__init__("N", color, x, y)
 
     def LegalMoves(self, Board):
-
         #Ecrire la fonction de calcule des coups légaux grâce au plateau (Board)
-        pass
+        move = [(2,1),(2,-1),(1,2),(1,-2),(-2,1),(-2,-1)]
+        y,x = self.posy
+        legalmoves = []
+
+    
