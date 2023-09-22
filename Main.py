@@ -46,7 +46,7 @@ while running:
 
         Game_Page(game)
     
-    #détection des événements                          
+    #détection des événements
     for event in pygame.event.get():
         
         #événement de fermeture de la page pygame
