@@ -11,4 +11,8 @@ class Pawn(Piece):
     def LegalMoves(self, Board, x, y):
 
         #Ecrire la fonction de calcule des coups légaux grâce au plateau (Board)
-        pass
+        if Board[y + moveDirection][x] == None: #verifier si le roi n'est pas découvert
+            legalmoves.append([y + moveDirection][x])
+        if Board[y + moveDirection][x + moveDirection] == Piece.Color != self.Color: #verifier si le roi n'est pas découvert
+            legalmoves[y + moveDirection][x + moveDirection]
+        return legalmoves
