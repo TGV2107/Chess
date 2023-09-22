@@ -24,7 +24,6 @@ class Game:
             [Rook("White"), Knight("White"), Bishop("White"), Queen("White"), King("White"), Bishop("White"), Knight("White"), Rook("White")]
             ]
         
-        self.isTurn = "White"
-
-
+        self.turn = "White"
+        self.gameStatus = "Playing"
 
