@@ -21,8 +21,8 @@ class Game:
             [None,None,None,None,None,None,None,None],
             [None,None,None,None,None,None,None,None],
             [None,None,None,None,None,None,None,None],
-            [Pawn("White"), Pawn("White"), Pawn("White"), Pawn("White"), Pawn("White"), Pawn("White"), Pawn("White"), Pawn("White")],
-            [Rook("White"), Knight("White"), Bishop("White"), Queen("White"), King("White"), Bishop("White"), Knight("White"), Rook("White")]
+            [Pawn("White",6,0), Pawn("White",6,1), Pawn("White",6,2), Pawn("White",6,3), Pawn("White",6,4), Pawn("White",6,5), Pawn("White",6,6), Pawn("White",6,7)],
+            [Rook("White",7,0), Knight("White",7,1), Bishop("White",7,2), Queen("White",7,3), King("White",7,4), Bishop("White",7,5), Knight("White",7,6), Rook("White",7,7)]
             ]
         
         self.turn = "White"

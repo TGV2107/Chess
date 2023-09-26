@@ -11,4 +11,4 @@ class Knight(Piece):
     def LegalMoves(self, Board):
 
         #Ecrire la fonction de calcule des coups légaux grâce au plateau (Board)
-        pass
+        
