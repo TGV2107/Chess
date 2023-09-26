@@ -6,7 +6,7 @@ class Bishop(Piece):
 
     def __init__(self, color, x, y):
 
-        super().__init__("B", color, x, y)
+        super().__init__("B", color)
 
     def LegalMoves(self, Board):
 
