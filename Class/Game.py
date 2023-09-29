@@ -26,5 +26,6 @@ class Game:
             ]
         
         self.turn = "White"
-        self.gameStatus = "Playing"
+        self.gameState = "Playing"
+
 
