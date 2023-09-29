@@ -21,3 +21,7 @@ class King(Piece):
             if Board[y + movey][x + movex] == None or Board[y + movey][x + movex] == Piece.Color:
                 legalmoves.append(Board[y + movey][x + movex])
         return legalmoves
+    
+    def ischess(self, Board):
+        """verifie si le roi est en echec en remplaçant le roi par une tour et un fou"""
+        pass
