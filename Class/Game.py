@@ -14,9 +14,9 @@ class Game:
     def __init__(self):
 
         #création de la matrice d'échiquier
-        self.Board = [
-            [Rook("Black",0,0), Knight("Black",0,1), Bishop("Black",0,2), Queen("Black",0,3), King("Black",0,4), Bishop("Black",0,5), Knight("Black",0,7), Rook("Black",0,8)],
-            [Pawn("Black",1,0),Pawn("Black",1,1),Pawn("Black",1,2),Pawn("Black",1,3),Pawn("Black",1,4),Pawn("Black",1,5),Pawn("Black",1,6),Pawn("Black",1,7)],
+        self.board = [
+            [Rook("Black"), Knight("Black"), Bishop("Black"), Queen("Black"), King("Black"), Bishop("Black"), Knight("Black"), Rook("Black")],
+            [Pawn("Black"),Pawn("Black"),Pawn("Black"),Pawn("Black"),Pawn("Black"),Pawn("Black"),Pawn("Black"),Pawn("Black")],
             [None,None,None,None,None,None,None,None],
             [None,None,None,None,None,None,None,None],
             [None,None,None,None,None,None,None,None],
@@ -26,5 +26,6 @@ class Game:
             ]
         
         self.turn = "White"
-        self.gameStatus = "Playing"
+        self.gameState = "Playing"
+
 
