@@ -36,3 +36,7 @@ window.ScreenName = "Main_Menu"
 while running:
     
     window.getElements()
+
+    running = window.blit()
+
+pygame.quit()
