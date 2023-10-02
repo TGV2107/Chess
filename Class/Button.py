@@ -1,38 +1,23 @@
 import pygame
-import pandas
 
-#test sur github
-class Button:
-    """Class permettant de créer un bouton"""
-
-    def __init__(self, text : str, font : pygame.font, color : tuple, scale : tuple, pos : tuple, image : pygame.image):
-        
-        #scale
-        self.scaleX, self.scaleY = scale
-
-        #image
-        image = pygame.transform.scale(image, scale)
-        self.image = image
+from Class.Element import *
 
 
-        #rect
-        posx,posy = pos
-        self.rect = self.image.get_rect()
-        self.rect.x = posx
-        self.rect.y = posy
-        
-        #design
-        self.font = font
-        self.color = color
-        self.text = text
-        self.design = font.render(text, False, color)
+class Button(Element):
+    '''Permet de créer un bouton enfant de Element avec une image une position et une taille définie, le rect est automatiquement affecté'''
 
-        #text rect
-        self.textrect = self.design.get_rect()
-        self.textrect.x = self.rect.x + self.scaleX//2 - self.textrect.width //2
-        self.textrect.y = self.rect.y + self.scaleY//2 - self.textrect.height //2
+    def __init__(self, name, pos: tuple, scale : tuple, image : pygame.image.load, page : str):
+        super().__init__(name, pos, "Button")
 
-    def Blit(self, screen):
+        self.image = pygame.transform.scale(image, scale)
+
+        self.rect = image.get_rect()
+
+        self.rect.x = self.posx
+        self.rect.y = self.posy
+
+        self.page = page
+
+    def Blit(self, screen): #affichage
         
         screen.blit(self.image, self.rect)
-        screen.blit(self.design, self.textrect)

@@ -1,10 +1,25 @@
-from Class.Button import *
 import random
+
+from Class.Button import *
+
 
 def Main_Menu(screen):
 
-    #bouton "Partie à deux joueurs"
-    button_TwoPlayer = Button("Partie à deux joueurs",pygame.font.SysFont("Comic Sans MS", 10, bold=True), (255,255,255), (200,200), (540,360), pygame.image.load("Assets/IMG/bouton_collection.png"))
-    button_TwoPlayer.Blit(screen)
+    #list des éléments
+    elements_list = []
 
-    return button_TwoPlayer.rect
+    #bouton "Partie à deux joueurs"
+    button_TwoPlayer = Button("yo",(0,0),(100,100),pygame.image.load("Assets/IMG/bouton_collection.png"), "Main_Menu")
+    elements_list.append(button_TwoPlayer)
+
+    #bouton test 2
+    button_test = Button("yo",(200,200),(50,50),pygame.image.load("Assets/IMG/bouton_collection.png"), "Main_Menu")
+    elements_list.append(button_test)
+
+    return elements_list
+
+def Main_Page_Relayeur(element, button):
+
+    if element.name == "yo" and button == 1:
+
+        print("izapedj")
