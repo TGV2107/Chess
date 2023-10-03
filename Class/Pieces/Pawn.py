@@ -4,9 +4,9 @@ from Class.Pieces.Piece import *
 class Pawn(Piece):
     """Permet de créer un pion enfant de Piece"""
 
-    def __init__(self, color):
+    def __init__(self, color,x , y):
 
-        super().__init__("P", color) #Attention les notations ne contiennent pas le "P" !
+        super().__init__("P", color, x, y) #Attention les notations ne contiennent pas le "P" !
 
     def LegalMoves(self, Board):
         y,x = self.posy,self.posx

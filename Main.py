@@ -35,35 +35,8 @@ window.ScreenName = "Main_Menu"
 #boucle d'actualisation
 while running:
     
-    pygame.display.flip()
-    window.Screen.fill((0,0,0))
-    
-    #affichage de chaque page
-    
-    if window.ScreenName == "Main_Menu": #affichage de main
-        
-        Main_Menu_button_TwoPlayer = Main_Menu(window.Screen)
+    window.getElements()
 
-    elif window.ScreenName == "Game_Page" : #affichage du jeu
+    running = window.blit()
 
-        Game_Page(game)
-    
-    #détection des événements
-    for event in pygame.event.get():
-        
-        #événement de fermeture de la page pygame
-        if event.type == pygame.QUIT:
-            
-            running = False
-            pygame.quit()
-
-        #événement clic sur souris, event.button représente le bouton de la souris
-        elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
-            
-            if Main_Menu_button_TwoPlayer.collidepoint(event.pos):
-                
-                game = Game()
-                window.ScreenName = "Game_Page"
-
-    #fps
-    time.sleep(0.05)
+pygame.quit()

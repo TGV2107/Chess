@@ -4,9 +4,9 @@ from Class.Pieces.Piece import *
 class Bishop(Piece):
     """Permet de créer un fou enfant de Piece"""
 
-    def __init__(self, color):
+    def __init__(self, color, x, y):
 
-        super().__init__("B", color)
+        super().__init__("B", color, x, y)
 
     def LegalMoves(self, Board):
         y,x = self.posy,self.posx
