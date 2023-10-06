@@ -31,10 +31,13 @@ class Game:
 
     def start_game(self):
         """Permet de démarrer la partie et gére sa logique"""
+        Game_Page = Game_Page(self)
 
         ChessBoard = Button(0, (0, 0), (400, 400), pygame.image.load("Assets/IMG/échiquier.png"), "Game_Page")
+        Game_Page.elements.append(ChessBoard)
+
         case_letters = ["a", "b", "c", "d", "e", "f", "g", "h"]
-        while self.gameStatus == "Playing":
+        while self.gameState == "Playing":
 
             #Mettre dans une méthode de Game après
             if self.turn == "White":
@@ -47,3 +50,4 @@ class Game:
                 if moveName[0] in case_letters and int(moveName[1]) in range(1, 8):
                     if self.board[int(moveName[0]), int(moveName[1])] != None:
                         break
+        return []
