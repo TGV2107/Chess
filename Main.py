@@ -16,12 +16,6 @@ from Class.Window import *
 from Pages.Game_Page import *
 from Pages.Main_Menu import *
 
-#importation des classes
-
-
-#importation des pages
-
-
 #page pygame
 pygame.init()
 pygame.font.init()
