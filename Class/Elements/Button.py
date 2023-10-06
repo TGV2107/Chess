@@ -1,7 +1,7 @@
 
 import pygame
 
-from Class.Element import *
+from Class.Elements.Element import *
 
 
 class Button(Element):

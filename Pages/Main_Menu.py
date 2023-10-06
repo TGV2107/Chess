@@ -1,6 +1,6 @@
 import random
 
-from Class.Button import *
+from Class.Elements.Button import *
 
 
 def Main_Menu(screen):
