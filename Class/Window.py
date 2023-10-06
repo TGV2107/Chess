@@ -38,6 +38,7 @@ class Window:
 
     def blit(self):
         """Permet l'affichague des éléments d'une page et le revoie aux fonctions en lien avec chaque boutons, permet également le traitement des événements"""
+        window = self
 
         running = True
         MOUSEBUTTONDOWN = False

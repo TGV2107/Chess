@@ -1,6 +1,7 @@
 import random
 
 from Class.Elements.Button import *
+from Class.Game import *
 from Class.Window import *
 
 
@@ -24,5 +25,6 @@ def Main_Page_Relayeur(window, element, button):
     if element.ID == "yo" and button == 1:
 
         window.ScreenName = "Game_Page"
+        window.game = Game()
 
     return window
