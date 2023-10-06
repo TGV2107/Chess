@@ -26,4 +26,15 @@ class King(Piece):
     
     def ischess(self, Board)-> bool:
         """verifie si le roi est en echec en remplaçant le roi par une tour et un fou et verifie si dans ses mouvements il peux avoir un fou ou une tour ou dame renvoie true si il est en echec et False sinon"""
+        x,y = self.posx, self.posy
+        fou = Bishop(self.Color,x,y)
+        tour = Rook(self.Color,x,y)
+        for i in fou.LegalMoves(Board):
+            if i == Bishop(not(self.Color)):
+                return True
+        for i in tour.LegalMoves(self.Color):
+            if Board(i) == Rook(not(self.Color)):
+                return True
+        return False
+
         
