@@ -1,5 +1,6 @@
 import random
 
+from Class.Elements.Button import *
 from Class.Pieces.Bishop import *
 from Class.Pieces.King import *
 from Class.Pieces.Knight import *
@@ -28,4 +29,20 @@ class Game:
         self.turn = "White"
         self.gameState = "Playing"
 
+    def start_game(self):
+        #Name pos scale image page
+        ChessBoard = Button(0, (0, 0), (400, 400), pygame.image.load("Assets/IMG/échiquier.png"))
+        case_letters = ["a", "b", "c", "d", "e", "f", "g", "h"]
+        while self.gameStatus == "Playing":
 
+            #Mettre dans une méthode de Game après
+            if self.turn == "White":
+                moveName = str(input("Move (piece pos + space + new pos): "))
+
+                #Remplace le première caractère du coup par sa valeur
+                moveName[0] == str(case_letters.index(moveName[0] + 1))
+
+                #Verifie si la case est dans la matrice
+                if moveName[0] in case_letters and int(moveName[1]) in range(1, 8):
+                    if self.board[int(moveName[0]), int(moveName[1])] != None:
+                        break
