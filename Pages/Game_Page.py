@@ -9,5 +9,9 @@ from Class.Pieces.Queen import *
 from Class.Pieces.Rook import *
 
 
-def Game_Page(game : Game()):
-    pass
+class Game_Page:
+
+    def __init__(self, game: Game(), elements: list = []):
+        self.game = game
+        self.elements = elements
+
