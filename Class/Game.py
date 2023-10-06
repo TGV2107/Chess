@@ -51,4 +51,4 @@ class Game:
                 if moveName[0] in case_letters and int(moveName[1]) in range(1, 8):
                     if self.board[int(moveName[0]), int(moveName[1])] != None:
                         break
-        return []
+        return Page.elements
