@@ -7,8 +7,8 @@ from Class.Elements.Element import *
 class Button(Element):
     '''Permet de créer un bouton enfant de Element avec une image une position et une taille définie, le rect est automatiquement affecté'''
 
-    def __init__(self, name, pos: tuple, scale : tuple, image : pygame.image.load, page : str):
-        super().__init__(name, pos, "Button")
+    def __init__(self, ID, pos: tuple, scale : tuple, image : pygame.image.load, page : str):
+        super().__init__(ID, pos, "Button")
 
         self.image = pygame.transform.scale(image, scale)
 

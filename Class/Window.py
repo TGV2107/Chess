@@ -33,7 +33,7 @@ class Window:
 
         elif self.ScreenName == "Game_Page" :
 
-            Game_Page(self.game)
+            self.elements_list = self.game.start_game()
 
 
     def blit(self):
@@ -66,7 +66,11 @@ class Window:
 
                     if element.page == "Main_Menu":
                         
-                        Main_Page_Relayeur(element, button)
+                        window = Main_Page_Relayeur(window, element, button)
+
+                    if element.page == "Game_Page":
+
+                        pass
 
         #return : running -> permet de stopper le programme (si False)
         return running

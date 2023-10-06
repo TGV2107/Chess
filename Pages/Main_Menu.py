@@ -1,6 +1,7 @@
 import random
 
 from Class.Elements.Button import *
+from Class.Window import *
 
 
 def Main_Menu(screen):
@@ -18,8 +19,10 @@ def Main_Menu(screen):
 
     return elements_list
 
-def Main_Page_Relayeur(element, button):
+def Main_Page_Relayeur(window, element, button):
 
-    if element.name == "yo" and button == 1:
+    if element.ID == "yo" and button == 1:
 
-        print("izapedj")
+        window.ScreenName = "Game_Page"
+
+    return window
