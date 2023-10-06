@@ -37,7 +37,6 @@ class Window:
 
 
     def blit(self):
-        print(self.elements_list)
         """Permet l'affichague des éléments d'une page et le revoie aux fonctions en lien avec chaque boutons, permet également le traitement des événements"""
         window = self
 
@@ -72,7 +71,7 @@ class Window:
 
                     if element.page == "Game_Page":
 
-                        pass
+                        self.game.getButtonAction(window, element)
 
         #return : running -> permet de stopper le programme (si False)
         return running

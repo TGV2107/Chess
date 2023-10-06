@@ -38,7 +38,7 @@ class Game:
         Page.elements.append(ChessBoard)
 
         case_letters = ["a", "b", "c", "d", "e", "f", "g", "h"]
-        while self.gameState == "Playing":
+        """while self.gameState == "Playing":
 
             #Mettre dans une méthode de Game après
             if self.turn == "White":
@@ -50,5 +50,11 @@ class Game:
                 #Verifie si la case est dans la matrice
                 if moveName[0] in case_letters and int(moveName[1]) in range(1, 8):
                     if self.board[int(moveName[0]), int(moveName[1])] != None:
-                        break
+                        break"""
         return Page.elements
+    
+    def getButtonAction(self, window, element):
+
+        if element.ID == 0:
+
+            print("AHHHHHHHHHH")
