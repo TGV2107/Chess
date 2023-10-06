@@ -31,7 +31,7 @@ class Game:
 
     def start_game(self):
         #Name pos scale image page
-        ChessBoard = Button(0, (0, 0), (400, 400), pygame.image.load("Assets/IMG/échiquier.png"))
+        ChessBoard = Button(0, (0, 0), (400, 400), pygame.image.load("Assets/IMG/échiquier.png"), "Game_Page")
         case_letters = ["a", "b", "c", "d", "e", "f", "g", "h"]
         while self.gameStatus == "Playing":
 
