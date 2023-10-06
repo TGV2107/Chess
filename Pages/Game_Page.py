@@ -11,7 +11,6 @@ from Class.Pieces.Rook import *
 
 class Game_Page:
 
-    def __init__(self, game: Game(), elements: list = []):
-        self.game = game
+    def __init__(self, elements: list = []):
         self.elements = elements
 
