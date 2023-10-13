@@ -16,6 +16,7 @@ class Window:
 
         self.elements_list = []
         self.button_list = []
+        self.previous_button = None
 
         self.game = None
 
@@ -39,9 +40,9 @@ class Window:
     def blit(self):
         """Permet l'affichague des éléments d'une page et le revoie aux fonctions en lien avec chaque boutons, permet également le traitement des événements"""
         window = self
-
+        previous_button = None
         running = True
-        MOUSEBUTTONDOWN = False
+        isMOUSEBUTTONDOWN = False
 
         for event in pygame.event.get(): #récupération des événements de pygame
             
@@ -50,20 +51,17 @@ class Window:
                 running = False
             
             elif event.type == pygame.MOUSEBUTTONDOWN: #si la souris a été cliquée
-
-                MOUSEBUTTONDOWN = True
+                
+                isMOUSEBUTTONDOWN = True
                 button = event.button
 
         for element in self.elements_list: #traitement de chaque élément
 
             element.Blit(self.Screen) #affichage
 
+            if element.type == "Button" and isMOUSEBUTTONDOWN: #gestion des boutons
 
-            if element.type == "Button" and MOUSEBUTTONDOWN: #gestion des boutons
-
-
-                if element.rect.collidepoint(event.pos): #appel des fonctions
-
+                if element.rect.collidepoint(event.pos) and not(element.__eq__(previous_button)): #appel des fonctions
 
                     if element.page == "Main_Menu":
                         
@@ -71,7 +69,10 @@ class Window:
 
                     if element.page == "Game_Page":
 
-                        self.game.getButtonAction(window, element)
+                        window = self.game.getButtonAction(window, element)
+                    
+                    previous_button = element
+
 
         #return : running -> permet de stopper le programme (si False)
         return running

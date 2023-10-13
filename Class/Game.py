@@ -57,4 +57,6 @@ class Game:
 
         if element.ID == 0:
 
-            print("AHHHHHHHHHH")
+            print("aaa")
+        
+        return window

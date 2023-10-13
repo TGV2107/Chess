@@ -12,3 +12,13 @@ class Element:
         self.pos = pos
 
         self.type = type
+
+    def __eq__(self, other) -> bool:
+        
+        if other == None: return False
+
+        if self.ID == other.ID:
+
+            return True
+        
+        return False
