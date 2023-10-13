@@ -43,11 +43,7 @@ class Game:
     def getButtonAction(self, window, element):
 
         if element.ID == 0:
-<<<<<<< HEAD
 
             print("aaa")
         
         return window
-=======
-            pass
->>>>>>> cee6bc78ce106bc1a3cdfbbfc625695423e064d9
