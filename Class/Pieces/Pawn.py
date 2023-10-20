@@ -5,8 +5,12 @@ class Pawn(Piece):
     """Permet de créer un pion enfant de Piece"""
 
     def __init__(self, color,x , y):
+        self.color = color
 
-        super().__init__("P", color, x, y) #Attention les notations ne contiennent pas le "P" !
+        super().__init__("P", x, y) #Attention les notations ne contiennent pas le "P" !
+
+    def __str__(self) -> str:
+        return "Ceci est un piont"
 
     def LegalMoves(self, Board):
         y,x = self.posy,self.posx

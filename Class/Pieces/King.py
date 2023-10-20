@@ -8,7 +8,7 @@ class King(Piece):
 
     def __init__(self, color, x, y):
 
-        super().__init__("K", color, x, y)
+        super().__init__("K", x, y)
 
     def LegalMoves(self, Board):
 

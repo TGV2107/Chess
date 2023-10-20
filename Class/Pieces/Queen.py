@@ -5,7 +5,7 @@ class Queen(Piece):
 
     def __init__(self, color, x, y):
 
-        super().__init__("Q", color, x, y)
+        super().__init__("Q", x, y)
 
     def LegalMoves(self, Board):
         y,x = self.posy,self.posx
