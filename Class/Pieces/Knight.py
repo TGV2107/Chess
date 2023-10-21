@@ -5,6 +5,7 @@ class Knight(Piece):
     """Permet de créer un cavalier enfant de Piece"""
 
     def __init__(self, color, x, y):
+        self.color = color
 
         super().__init__("N", x, y)
 

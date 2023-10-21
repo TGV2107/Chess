@@ -7,6 +7,7 @@ class King(Piece):
     """Permet de créer un roi enfant de Piece"""
 
     def __init__(self, color, x, y):
+        self.color = color
 
         super().__init__("K", x, y)
 
