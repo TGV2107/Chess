@@ -16,36 +16,36 @@ class Bishop(Piece):
         y,x = self.posy,self.posx
         legalmoves = []
         for i in range (1,8):
-            print(y, x, y+i, x+i)
             if x + i < 0 or x + i > 7 or y + i < 0 or y + i > 7:
                 break
             if Board[y + i][x + i] == None or Board[y + i][x + i].color != self.color:
                 legalmoves.append((y+i,x+i))
-                print(Board[y+i][x+i])
-                print(1)
             if Board[y + i][x + i] != None:
                 break
     
-        """for i in range (1,8):
+        for i in range (1,8):
+            if x - i < 0 or x - i > 7 or y + i < 0 or y + i > 7:
+                break
             if Board[y + i][x - i] == None or Board[y + i][x - i].color != self.color:
                 legalmoves.append((y+i,x-i))
-                print(2)
             if Board[y + i][x - i] != None:
                 break
 
         for i in range (1,8):
+            if x + i < 0 or x + i > 7 or y - i < 0 or y - i > 7:
+                break
             if Board[y - i][x + i] == None or Board[y - i][x + i].color != self.color:
                 legalmoves.append((y-i,x+i))
-                print(3)
             if Board[y - i][x + i] != None:
                 break
 
         for i in range (1,8):
+            if x - i < 0 or x - i > 7 or y - i < 0 or y - i > 7:
+                break
             if Board[y - i][x - i] == None or Board[y - i][x - i].color != self.color:
                 legalmoves.append((y-i,x-i))
-                print(4)
             if Board[y - i][x - i] != None:
-                break"""
+                break
 
         return legalmoves
 

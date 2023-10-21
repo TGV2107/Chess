@@ -9,36 +9,42 @@ class Rook(Piece):
 
         super().__init__("R", x, y)
 
+    def __str__(self) -> str:
+        return "Ceci est une tour"
+
     def LegalMoves(self, Board):
         #Ecrire la fonction de calcule des coups légaux grâce au plateau (Board)
         
         legalmoves = []
         y,x = self.posy,self.posx
         # penser a faire le systeme pour interdir de faire bouger la pièce si on risque d'etre en échec
-        for i in range(7):
-
-            if Board[y + i][x] == None or Board[y + i][x] and [y + i][x].Color != self.Color:
+        
+        for i in range(1,8):
+            if y + i < 0 or y + i > 7:
+                break
+            if Board[y + i][x] == None or Board[y + i][x].color != self.color:
                 legalmoves.append(Board[y + i][x])
-                if Board[y + i][x] == Piece():
+                if Board[y + i][x] != None:
                     break
         
-        for i in range(7):
-            if Board[y][x + i] == None or Board[y][x + i] and Piece.Color != self.Color:
+        for i in range(1,8):
+            if x + i < 0 or x + i > 7:
+                break
+            if Board[y][x + i] == None or Board[y][x + i].color != self.color:
                 legalmoves.append(Board[y][x + i])
-                if Board[y][x + y] == Piece():
+                if Board[y][x + y] != None:
                     break
         
-        for i in range(-7,0):
-
-            if Board[y + i][x] == None or Board[y + i][x] and Piece.Color != self.Color:
+        for i in range(1,8):
+            if Board[y - i][x] == None or Board[y - i][x].color != self.color:
                 legalmoves.append(Board[y + i][x])
-                if Board[y + i][x] == Piece():
+                if Board[y + i][x] != None:
                     break
         
-        for i in range(-7,0):
-            if Board[y][x + i] == None or Board[y][x + i] and Piece.Color != self.Color:
+        for i in range(1,8):
+            if Board[y][x - i] == None or Board[y][x - i].color != self.color:
                 legalmoves.append(Board[y][x + i])
-                if Board[y][x + y] == Piece():
+                if Board[y][x + y] != None:
                     break
 
         return legalmoves
