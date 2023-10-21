@@ -4,10 +4,10 @@ from Class.Pieces.Piece import *
 class Rook(Piece):
     """Permet de créer une tour enfante de Piece"""
 
-    def __init__(self, color, y, x):
+    def __init__(self, color, x,y):
         self.color = color
 
-        super().__init__("R", y, x)
+        super().__init__("R", x,y)
 
     def __str__(self) -> str:
         return "Ceci est une tour"

@@ -4,7 +4,7 @@ from Class.Pieces.Piece import *
 class Bishop(Piece):
     """Permet de créer un fou enfant de Piece"""
 
-    def __init__(self, color, y, x):
+    def __init__(self, color, x, y):
         self.color = color
 
         super().__init__("B", x, y)

@@ -8,6 +8,9 @@ class King(Piece):
 
     def __init__(self, color, x, y):
         self.color = color
+    
+    def __str__(self) -> str:
+        return "Ceci est un roi"
 
         super().__init__("K", x, y)
 
@@ -20,21 +23,23 @@ class King(Piece):
         move = [(0,1),(0,-1),(1,0),(1,1),(1,-1),(-1,0),(-1,1),(-1,-1)]
 
         for i in move:
-            movey,movex = move
-            if Board[y + movey][x + movex] == None or Board[y + movey][x + movex] == Piece.Color:
-                legalmoves.append(Board[y + movey][x + movex])
+            movey,movex = i
+            if x + i < 0 or x + i > 7 or y + i < 0 or y + i > 7:
+                break
+            if Board[y + movey][x + movex] == None or Board[y + movey][x + movex] == [y + movey][x + movex].color:
+                legalmoves.append((y + movey,x + movex))
         return legalmoves
     
     def ischess(self, Board)-> bool:
         """verifie si le roi est en echec en remplaçant le roi par une tour et un fou et verifie si dans ses mouvements il peux avoir un fou ou une tour ou dame renvoie true si il est en echec et False sinon"""
         x,y = self.posx, self.posy
-        fou = Bishop(self.Color,x,y)
-        tour = Rook(self.Color,x,y)
+        fou = Bishop(self.color,x,y)
+        tour = Rook(self.color,x,y)
         for i in fou.LegalMoves(Board):
-            if i == Bishop(not(self.Color)):
+            if i == Bishop(not(self.color)):
                 return True
-        for i in tour.LegalMoves(self.Color):
-            if Board(i) == Rook(not(self.Color)):
+        for i in tour.LegalMoves(self.color):
+            if Board(i) == Rook(not(self.color)):
                 return True
         return False
 
