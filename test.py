@@ -1,12 +1,10 @@
 from Class.Pieces.Piece import *
-from Class.Pieces.Rook import *
+from Class.Pieces.Knight import *
 from Class.Game import *
 
 game = Game()
 
-test = game.board[0][0]
-print(game.board[4][4])
-game.board[4][4] = Rook("Black",4,4)
-print(game.board[4][4])
+test = game.board[0][1]
+print(test)
 
-print(game.board[4][4].getLegalMoves(game.board))
+print(test.getLegalMoves(game.board))
