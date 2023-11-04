@@ -1,4 +1,7 @@
 from Class.Pieces.Piece import *
+from Class.Pieces.Bishop import *
+from Class.Pieces.Rook import *
+from Class.Game import *
 
 class Queen(Piece):
     """Permet de créer une dame enfante de Piece"""
@@ -8,61 +11,15 @@ class Queen(Piece):
 
         super().__init__("Q", x, y)
 
-    def LegalMoves(self, Board):
-        y,x = self.posy,self.posx
+    def getLegalMoves(self, Board):
+        y, x = self.posy, self.posx
         legalmoves = []
 
-        #copie légalMoves fou
-        for i in range (7):
-            if Board[y + i][x + i] == None or Board[y + i][x + i] and Piece.Color != self.Color:
-                legalmoves.append(Board[y + i][x + i])
-            if Board[y + i][x + i] == Piece:
-                break
-    
-        for i in range (7):
-            if Board[y + i][x - i] == None or Board[y + i][x + i] and Piece.Color != self.Color:
-                legalmoves.append(Board[y + i][x + i])
-            if Board[y + i][x - i] == Piece:
-                break
+        # Ajouter les mouvements de la tour (rook)
+        legalmoves.extend(Rook(self.color, y, x).getLegalMoves(Board))
 
-        for i in range (7):
-            if Board[y - i][x + i] == None or Board[y + i][x + i] and Piece.Color != self.Color:
-                legalmoves.append(Board[y + i][x + i])
-            if Board[y - i][x + i] == Piece:
-                break
-
-        for i in range (7):
-            if Board[y + i][x - i] == None or Board[y + i][x + i] and Piece.Color != self.Color:
-                legalmoves.append(Board[y + i][x + i])
-            if Board[y + i][x - i] == Piece:
-                break
-        
-        #copie legalmoves tour
-        for i in range(7):
-
-            if Board[y + i][x] == None or Board[y + i][x] and Piece.Color != self.Color:
-                legalmoves.append(Board[y + i][x])
-                if Board[y + i][x] == Piece:
-                    break
-        
-        for i in range(7):
-            if Board[y][x + i] == None or Board[y][x + i] and Piece.Color != self.Color:
-                legalmoves.append(Board[y][x + i])
-                if Board[y][x + y] == Piece:
-                    break
-        
-        for i in range(-7,0):
-
-            if Board[y + i][x] == None or Board[y + i][x] and Piece.Color != self.Color:
-                legalmoves.append(Board[y + i][x])
-                if Board[y + i][x] == Piece:
-                    break
-        
-        for i in range(-7,0):
-            if Board[y][x + i] == None or Board[y][x + i] and Piece.Color != self.Color:
-                legalmoves.append(Board[y][x + i])
-                if Board[y][x + y] == Piece:
-                    break
+        # Ajouter les mouvements du fou (bishop)
+        legalmoves.extend(Bishop(self.color, y, x).getLegalMoves(Board))
 
         return legalmoves
 
