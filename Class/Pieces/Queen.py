@@ -10,6 +10,9 @@ class Queen(Piece):
         self.color = color
 
         super().__init__("Q", x, y)
+    
+    def __str__(self) -> str:
+        return "Ceci est une Dame"
 
     def getLegalMoves(self, Board):
         y, x = self.posy, self.posx
