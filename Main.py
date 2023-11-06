@@ -15,7 +15,6 @@ from Class.Pieces.Rook import *
 from Class.Window import *
 from Pages.Game_Page import *
 from Pages.Main_Menu import *
-
 #page pygame
 pygame.init()
 pygame.font.init()
